@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IROBAU | Renovierung & Innenausbau in Korntal-Münchingen</title>
+  <meta name="description" content="IROBAU – Renovierung und Innenausbau aus einer Hand. Fliesen, Böden, Wände und Malerarbeiten in Korntal-Münchingen, Stuttgart und Umgebung.">
+  <meta name="theme-color" content="#0b0b0b">
+  <style>
+    :root{
+      --bg:#f5f5f3;
+      --paper:#ffffff;
+      --ink:#0b0b0b;
+      --text:#4f4f4f;
+      --muted:#888;
+      --line:#dededb;
+      --dark:#0a0a0a;
+      --max:1240px;
+      --pad:clamp(1rem,4vw,4rem);
+      --section:clamp(5.2rem,8vw,8rem);
+      --ease:cubic-bezier(.22,.78,.22,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(100%,var(--max));margin:0 auto;padding-inline:var(--pad)}
+
+    /* HERO */
+    .hero{padding:0;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff 0%,#f7f7f4 100%)}
+    .hero-shell{min-height:100svh;display:flex;flex-direction:column}
+    .hero-nav{position:relative;z-index:4;height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:.85rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      font-size:1.03rem;
+      line-height:1;
+    }
+    .brand-mark{
+      width:46px;
+      height:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:0;
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      font-size:.70rem;
+      font-weight:800;
+      line-height:1;
+      letter-spacing:.12em;
+      text-indent:.12em;
+    }
+    .nav-links{display:flex;align-items:center;gap:1.8rem;font-size:.93rem;color:#525252}
+    .nav-links a{transition:opacity .2s ease}.nav-links a:hover{opacity:.65}
+    .nav-call{padding:.78rem 1rem;border:1px solid #111;border-radius:8px;background:#111;font-weight:650;color:#fff!important}
+
+    .hero-grid{flex:1;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(360px,.98fr);gap:clamp(2rem,4vw,4.8rem);align-items:center;padding:clamp(2rem,4.5vh,3.8rem) var(--pad) clamp(3rem,7vh,5rem)}
+    .hero-copy-col{display:flex;align-items:center;min-width:0}
+    .hero-copy{max-width:650px}
+    .kicker{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1.4rem;color:#717171;font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .kicker::before{content:"";width:38px;height:1px;background:#bdbdbd}
+    .hero h1{margin:0;max-width:680px;font-size:clamp(3.7rem,5.6vw,5.9rem);line-height:.94;letter-spacing:-.048em;font-weight:700;text-wrap:balance}
+    .hero-title-lead,.hero-title-focus{display:block}
+    .hero-title-focus{max-width:10.8ch}
+    .hero-sub{margin:1.55rem 0 0;max-width:38rem;color:var(--text);font-size:clamp(1rem,1.2vw,1.18rem);line-height:1.66}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.85rem;margin-top:2.1rem}
+    .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:1.2rem;padding:1rem 1.15rem;border-radius:8px;font-size:.95rem;font-weight:650;transition:transform .2s var(--ease),background .2s ease,color .2s ease,border-color .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-light{background:#111;color:#fff;min-width:185px}
+    .btn-ghost{border:1px solid #c9c9c5;color:#111;background:#fff;min-width:175px}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:.65rem 1.5rem;margin-top:2rem;padding-top:1.1rem;border-top:1px solid var(--line);max-width:760px;color:#6a6a6a;font-size:.78rem;letter-spacing:.05em;text-transform:uppercase}
+
+    .hero-visual{min-width:0}
+    .hero-artboard{position:relative;min-height:640px;background:linear-gradient(180deg,#181818 0%,#0f0f0f 100%);overflow:hidden;box-shadow:0 32px 70px rgba(0,0,0,.16)}
+    .hero-artboard::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(180deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:72px 72px;opacity:.18}
+    .hero-note{position:absolute;top:24px;left:24px;z-index:3;padding:1rem 1.1rem;background:#fff;color:#111;box-shadow:0 18px 40px rgba(0,0,0,.16);max-width:250px}
+    .hero-note span{display:block;margin-bottom:.35rem;color:#7b7b7b;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .hero-note strong{display:block;font-size:1.05rem;line-height:1.28;letter-spacing:-.02em}
+    .hero-photo-main,.hero-photo-detail{position:absolute;background-size:cover;background-position:center;box-shadow:0 20px 45px rgba(0,0,0,.22)}
+    .hero-photo-main{top:0;right:0;width:74%;height:74%;background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=88&w=1800&auto=format&fit=crop')}
+    .hero-photo-detail{left:0;bottom:0;width:46%;height:39%;background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=88&w=1400&auto=format&fit=crop')}
+    .hero-panel{position:absolute;right:24px;bottom:24px;z-index:3;width:min(330px,calc(100% - 48px));padding:1.2rem 1.2rem 1.25rem;background:rgba(255,255,255,.94);color:#111;box-shadow:0 18px 40px rgba(0,0,0,.18)}
+    .hero-panel span{display:block;margin-bottom:.55rem;color:#7b7b7b;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .hero-panel strong{display:block;font-size:1.18rem;line-height:1.3;letter-spacing:-.02em}
+    .hero-panel p{margin:.75rem 0 0;color:#5b5b5b;font-size:.92rem;line-height:1.6}
+
+    /* GENERIC */
+    section{scroll-margin-top:2rem}
+    .section{padding:var(--section) 0;background:#fff}
+    .section.soft{background:var(--bg)}
+    .eyebrow{display:block;margin-bottom:1rem;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .section-head{max-width:760px;margin-bottom:clamp(2.8rem,5vw,4.6rem)}
+    .section-head h2{margin:0;max-width:11ch;font-size:clamp(2.8rem,4.8vw,4.9rem);line-height:.98;letter-spacing:-.04em;font-weight:650}
+    .section-head p{margin:1.35rem 0 0;max-width:42rem;color:var(--text);font-size:1.02rem;line-height:1.72}
+
+    /* SERVICES */
+    .services{border-top:1px solid var(--line)}
+    .service-row{display:grid;grid-template-columns:80px minmax(220px,.8fr) 1.4fr;gap:2rem;align-items:start;padding:1.65rem 0;border-bottom:1px solid var(--line)}
+    .service-no{color:#a0a0a0;font-size:.7rem;letter-spacing:.08em}
+    .service-row h3{margin:0;font-size:1.35rem;letter-spacing:-.02em;font-weight:630}
+    .service-row p{margin:0;color:var(--text);line-height:1.67;max-width:36rem;font-size:.96rem}
+
+    /* TRUST */
+    .split{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(3.5rem,8vw,8rem);align-items:start}
+    .sticky{position:sticky;top:2.5rem}
+    .sticky h2{margin:0;max-width:9ch;font-size:clamp(3rem,4.7vw,4.8rem);line-height:.97;letter-spacing:-.04em;font-weight:650}
+    .sticky p{margin:1.35rem 0 0;max-width:31rem;color:var(--text);line-height:1.72}
+    .trust-list{border-top:1px solid var(--line)}
+    .trust-item{display:grid;grid-template-columns:34px 1fr;gap:1rem;padding:1.6rem 0;border-bottom:1px solid var(--line)}
+    .trust-item span{color:#9b9b9b;font-size:.67rem;padding-top:.18rem}
+    .trust-item h3{margin:0 0 .45rem;font-size:1.18rem;letter-spacing:-.02em;font-weight:630}
+    .trust-item p{margin:0;color:var(--text);line-height:1.65;font-size:.95rem}
+
+    /* LOCAL */
+    .local-panel{display:grid;grid-template-columns:1fr .8fr;gap:clamp(3rem,7vw,7rem);align-items:end;padding:clamp(2rem,4vw,3.4rem);background:#111;color:#fff;border-radius:18px}
+    .local-panel h2{margin:0;max-width:11ch;font-size:clamp(2.8rem,4.4vw,4.5rem);line-height:.98;letter-spacing:-.04em;font-weight:650}
+    .local-panel p{margin:1.2rem 0 0;max-width:39rem;color:#bcbcbc;line-height:1.7}
+    .local-side{display:grid;gap:.8rem;justify-items:start}
+    .local-chip{display:inline-flex;padding:.72rem .9rem;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:#d4d4d4;font-size:.84rem}
+
+    /* CONTACT */
+    .contact{padding:clamp(6rem,9vw,9rem) 0;background:#efefed}
+    .contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:clamp(3rem,8vw,8rem);align-items:end}
+    .contact h2{margin:0;max-width:8ch;font-size:clamp(4rem,7vw,7.4rem);line-height:.9;letter-spacing:-.05em;font-weight:680}
+    .contact-copy p{margin:1.4rem 0 0;max-width:34rem;color:var(--text);font-size:1.03rem;line-height:1.72}
+    .contact-card{border-top:1px solid #cbcbc7;padding-top:1.4rem}
+    .contact-card .label{display:block;margin-bottom:1.2rem;color:#8a8a86;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .contact-line{display:flex;justify-content:space-between;gap:1rem;padding:.92rem 0;border-bottom:1px solid #d8d8d4;color:#333;font-size:.94rem}
+    .contact-line strong{font-weight:620;color:#111}
+    .contact-actions{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.3rem}
+    .contact-actions .btn{width:100%;min-width:0}
+    .btn-dark{background:#111;color:#fff}
+    .btn-outline{border:1px solid #bbb;background:transparent;color:#111}
+
+    footer{padding:1.2rem 0 1.4rem;background:#efefed;border-top:1px solid #d8d8d4;color:#747474;font-size:.74rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+    @media(max-width:900px){
+      .nav-links a:not(.nav-call){display:none}
+      .service-row{grid-template-columns:54px 1fr;gap:1rem}
+      .service-row p{grid-column:2}
+      .split,.local-panel,.contact-grid{grid-template-columns:1fr}
+      .sticky{position:static}
+      .local-side{margin-top:1rem}
+    }
+    @media(max-width:640px){
+      .hero{background:#fff}
+      .hero-shell{min-height:auto}
+      .hero-nav{height:72px}
+      .brand-mark{
+        width:42px;
+        height:30px;
+        font-size:.66rem;
+        letter-spacing:.11em;
+        text-indent:.11em;
+      }
+      .nav-call{padding:.65rem .8rem;font-size:.82rem}
+      .hero-grid{grid-template-columns:1fr;gap:0;padding-top:clamp(2.2rem,7vh,4rem);padding-bottom:2.5rem}
+      .hero-copy-col{align-items:flex-start}
+      .hero-copy{max-width:none;width:100%}
+      .kicker{font-size:.66rem;margin-bottom:1.15rem}
+      .kicker::before{width:24px}
+      .hero h1{max-width:10.3ch;font-size:clamp(3.25rem,13.5vw,4.55rem);line-height:.93;letter-spacing:-.045em}
+      .hero-title-lead,.hero-title-focus{display:block}
+      .hero-title-focus{max-width:none}
+      .hero-sub{font-size:.98rem;line-height:1.58;max-width:23rem}
+      .hero-actions{display:grid;grid-template-columns:1fr;max-width:100%;margin-top:1.5rem}
+      .btn{width:100%;min-width:0}
+      .hero-meta{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1rem;margin-top:2.05rem;padding:1.25rem 0 .1rem;border-top:1px solid var(--line);font-size:.68rem}
+      .hero-visual{display:none}
+      .section{padding:4.8rem 0}
+      .section-head{margin-bottom:2.7rem}
+      .section-head h2,.sticky h2{font-size:clamp(2.7rem,12vw,4rem)}
+      .service-row{grid-template-columns:40px 1fr;padding:1.35rem 0}
+      .service-row h3{font-size:1.18rem}
+      .service-row p{font-size:.92rem}
+      .contact{padding:5.2rem 0}
+      .contact h2{font-size:clamp(3.7rem,16vw,5.4rem)}
+      .contact-actions{grid-template-columns:1fr}
+      .contact-line{display:grid;gap:.25rem}
+    }
+  
+    /* MOTION */
+    @keyframes heroFadeUp{
+      from{opacity:0;transform:translateY(22px)}
+      to{opacity:1;transform:none}
+    }
+    @keyframes heroVisualIn{
+      from{opacity:0;transform:translateY(18px) scale(.985)}
+      to{opacity:1;transform:none}
+    }
+
+    .hero-copy .kicker,
+    .hero-copy h1,
+    .hero-copy .hero-sub,
+    .hero-copy .hero-actions,
+    .hero-copy .hero-meta{
+      opacity:0;
+      animation:heroFadeUp .8s var(--ease) forwards;
+    }
+    .hero-copy .kicker{animation-delay:.08s}
+    .hero-copy h1{animation-delay:.16s}
+    .hero-copy .hero-sub{animation-delay:.28s}
+    .hero-copy .hero-actions{animation-delay:.38s}
+    .hero-copy .hero-meta{animation-delay:.48s}
+
+    .hero-visual{
+      opacity:0;
+      animation:heroVisualIn .95s var(--ease) .2s forwards;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .8s var(--ease),transform .8s var(--ease);
+      will-change:opacity,transform;
+    }
+    .reveal.in{
+      opacity:1;
+      transform:none;
+    }
+
+    .service-row{
+      transition:transform .28s var(--ease),background-color .28s ease,padding-left .28s var(--ease);
+    }
+    .service-row:hover{
+      transform:translateX(4px);
+      background:#fafafa;
+      padding-left:.35rem;
+    }
+
+    .trust-item{transition:transform .28s var(--ease)}
+    .trust-item:hover{transform:translateX(4px)}
+
+    .brand-mark{transition:transform .25s var(--ease),background .25s ease}
+    .brand:hover .brand-mark{
+      transform:translateY(-2px);
+      background:#222;
+    }
+
+    .nav-call,.btn{
+      position:relative;
+      overflow:hidden;
+    }
+    .nav-call::after,.btn::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(255,255,255,.12);
+      transform:translateX(-110%);
+      transition:transform .45s var(--ease);
+      pointer-events:none;
+    }
+    .nav-call:hover::after,.btn:hover::after{transform:translateX(0)}
+
+    .local-panel{transition:transform .35s var(--ease),box-shadow .35s ease}
+    .local-panel:hover{
+      transform:translateY(-3px);
+      box-shadow:0 20px 50px rgba(0,0,0,.12);
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .hero-copy .kicker,
+      .hero-copy h1,
+      .hero-copy .hero-sub,
+      .hero-copy .hero-actions,
+      .hero-copy .hero-meta,
+      .hero-visual,
+      .reveal{
+        opacity:1!important;
+        transform:none!important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-shell">
+        <header class="hero-nav wrap">
+          <a href="#top" class="brand" aria-label="IROBAU Startseite"><span class="brand-mark">IRO</span><span>IROBAU</span></a>
+          <nav class="nav-links" aria-label="Hauptnavigation">
+            <a href="#leistungen">Leistungen</a>
+            <a href="#einsatzgebiet">Einsatzgebiet</a>
+            <a href="#kontakt">Kontakt</a>
+            <a class="nav-call" href="tel:+491728869632">Jetzt anrufen ↗</a>
+          </nav>
+        </header>
+
+        <div class="hero-grid wrap">
+          <div class="hero-copy-col">
+            <div class="hero-copy">
+              <div class="kicker">Zuverlässig · sauber · fair</div>
+              <h1><span class="hero-title-lead">Renovierungen</span><span class="hero-title-focus">aus einer Hand.</span></h1>
+              <p class="hero-sub">Fliesen, Böden, Wände und Malerarbeiten für Wohnungen und Häuser in Korntal-Münchingen, Stuttgart und Umgebung.</p>
+              <div class="hero-actions">
+                <a class="btn btn-light" href="tel:+491728869632"><span>Jetzt anrufen</span><span>→</span></a>
+                <a class="btn btn-ghost" href="mailto:info-irobau@gmx.de"><span>Anfrage senden</span><span>↗</span></a>
+              </div>
+              <div class="hero-meta" aria-label="Leistungsübersicht">
+                <span>Fliesenarbeiten</span><span>Bodenarbeiten</span><span>Wände & Tapeten</span><span>Malerarbeiten</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-artboard">
+              <div class="hero-note">
+                <span>IROBAU</span>
+                <strong>Renovierungsarbeiten für Wohnung und Haus.</strong>
+              </div>
+              <div class="hero-photo-main"></div>
+              <div class="hero-photo-detail"></div>
+              <div class="hero-panel">
+                <span>Leistungen</span>
+                <strong>Fliesen, Böden, Wände und Malerarbeiten.</strong>
+                <p>Für Wohnungen und Häuser in Korntal-Münchingen, Stuttgart und Umgebung.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Leistungen</span>
+          <h2>Alles, was Räume wieder richtig gut macht.</h2>
+          <p>IROBAU übernimmt zentrale Renovierungsarbeiten im Innenbereich – mit einem direkten Ansprechpartner und einer sauberen, abgestimmten Umsetzung.</p>
+        </div>
+
+        <div class="services">
+          <article class="service-row reveal"><div class="service-no">01</div><h3>Fliesenarbeiten</h3><p>Verlegung und Erneuerung von Wand- und Bodenfliesen für Küche, Bad und weitere Wohnbereiche.</p></article>
+          <article class="service-row reveal"><div class="service-no">02</div><h3>Bodenarbeiten</h3><p>Verlegung von Bodenbelägen wie Laminat, Vinyl und passenden Lösungen für unterschiedliche Räume.</p></article>
+          <article class="service-row reveal"><div class="service-no">03</div><h3>Wände & Tapeten</h3><p>Vorbereitung von Wandflächen, Tapezierarbeiten und saubere Aufarbeitung bestehender Oberflächen.</p></article>
+          <article class="service-row reveal"><div class="service-no">04</div><h3>Malerarbeiten</h3><p>Streichen von Wänden und Decken für ein sauberes, ruhiges und gepflegtes Ergebnis.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="wrap split">
+        <div class="sticky reveal">
+          <span class="eyebrow">Zusammenarbeit</span>
+          <h2>Direkt. Persönlich. Unkompliziert.</h2>
+          <p>Renovierungen funktionieren am besten, wenn Absprachen klar sind und die Arbeiten sauber ineinandergreifen. Genau darauf ist IROBAU ausgerichtet.</p>
+        </div>
+        <div class="trust-list">
+          <article class="trust-item reveal"><span>01</span><div><h3>Ein Ansprechpartner</h3><p>Sie besprechen Ihr Vorhaben direkt mit der Person, die die Arbeiten koordiniert und umsetzt.</p></div></article>
+          <article class="trust-item reveal"><span>02</span><div><h3>Mehrere Arbeiten aus einer Hand</h3><p>Fliesen, Böden, Wände und Malerarbeiten können sinnvoll miteinander abgestimmt werden.</p></div></article>
+          <article class="trust-item reveal"><span>03</span><div><h3>Saubere Umsetzung</h3><p>Eine ordentliche Ausführung und ein gepflegtes Ergebnis stehen bei jeder Renovierung im Mittelpunkt.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="einsatzgebiet">
+      <div class="wrap">
+        <div class="local-panel reveal">
+          <div>
+            <span class="eyebrow" style="color:#8c8c8c">Einsatzgebiet</span>
+            <h2>Korntal-Münchingen, Stuttgart & Umgebung.</h2>
+            <p>IROBAU übernimmt Renovierungsarbeiten für Wohnungen und Häuser in der Region – persönlich, flexibel und mit kurzen Abstimmungswegen.</p>
+          </div>
+          <div class="local-side">
+            <span class="local-chip">Korntal-Münchingen</span>
+            <span class="local-chip">Stuttgart</span>
+            <span class="local-chip">Umgebung</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt">
+      <div class="wrap contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Sie planen eine Renovierung?</h2>
+          <p>Rufen Sie direkt an oder senden Sie kurz eine Nachricht. Für eine erste Einschätzung reichen ein paar Informationen zu den gewünschten Arbeiten.</p>
+        </div>
+
+        <div class="contact-card reveal">
+          <span class="label">IROBAU</span>
+          <div class="contact-line"><span>Telefon</span><strong>0172 8869632</strong></div>
+          <div class="contact-line"><span>E-Mail</span><strong>info-irobau@gmx.de</strong></div>
+          <div class="contact-line"><span>Adresse</span><strong>Talstraße 38 · 70825 Korntal-Münchingen</strong></div>
+          <div class="contact-actions">
+            <a class="btn btn-dark" href="tel:+491728869632"><span>Anrufen</span><span>→</span></a>
+            <a class="btn btn-outline" href="mailto:info-irobau@gmx.de"><span>E-Mail</span><span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> IROBAU</span>
+      <span>Renovierung & Innenausbau · Korntal-Münchingen</span>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.14,
+      rootMargin: '0px 0px -5% 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach((el, index) => {
+      const delay = Math.min((index % 4) * 70, 210);
+      el.style.transitionDelay = `${delay}ms`;
+      revealObserver.observe(el);
+    });
+  </script>
+
+</body>
+</html>
